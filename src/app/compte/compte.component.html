@@ -1,0 +1,131 @@
+<form [formGroup]="addCompteForm" >
+<form [formGroup]="updateCompteForm"> 
+  <div *ngFor="let compte of comptes">
+    
+<div class="cotainner">
+    <div class="main-body">
+        <div class="row"style="margin-right: 20px;">
+            <div class="col-lg-4 col-md-4 pt-4 "style="margin-left: 30px;">
+              
+                <div class="card">
+                  <div class="d-flex flex-column align-items-center text-center">
+                      <label class="btn btn-outline-primary" for="fileInput">Choose a file</label>
+                      <input type="file" name="file" id="fileInput"  >
+                      
+                      <br>
+                      
+                    
+                    <div class="mt-3">
+                      <h5></h5>
+                      <br>
+                      {{compte.name}}
+                      <p class="text-secondary mb-1">Full Stack Developer</p>
+                      
+                      <p class="text-muted font-size-sm"></p>
+                      <br>
+                      <br>
+
+                    </div>
+                  </div>
+
+                   <hr>
+                   
+
+                    <ul class="list-group list-group-flush">
+
+                       <h6><li class="list-group-item"><i class="bi bi-twitter"style="font-size:20px;"></i>  Twitter :  {{compte.twitter}}<span class="text-secondary"style="margin-left: 20px;"></span></li></h6>
+                       
+                       <h6><li class="list-group-item"><i class="bi bi-linkedin" style="font-size:20px;"></i>  Linkdin : {{compte.linkedin}}<span class="text-secondary"style="margin-left: 20px;"></span></li></h6>
+                       
+                       <h6><li class="list-group-item"><i class="bi bi-github" style="font-size:20px;"></i>  Github : {{compte.gethub}}<span class="text-secondary"style="margin-left: 20px;"></span></li></h6>
+                    </ul>
+                
+              </div>
+            </div>
+            </div>
+            
+             <div class="col-lg-7  pt-4" style="margin-left: 30px;">
+               <div class="card ">
+                  <div class="card-body">
+
+
+                    <div class="row mb-4">
+                      <div class="col-sm-3">
+                        <h6>Full Name</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input type="text" class="form-control" formControlName="name">
+                      </div>
+                    </div>
+                    <div class="row mb-4">
+                      <div class="col-sm-3">
+                        <h6>Phone</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input type="text" class="form-control" formControlName="tel">
+                      </div>
+                    </div>
+                    <div class="row mb-4">
+                      <div class="col-sm-3">
+                        <h6>Address</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input type="text" class="form-control" formControlName="adress">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+            
+              
+
+              <div class="cord col-lg-12  pt-2 "style="margin-left: 2px;">
+                <div class="card "style="margin-top: 40px;">
+                    <div class="card-body" >
+    
+    
+                      <div class="row mb-4">
+                        <div class="col-sm-3">
+                          <h6>Twitter</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <input type="text" class="form-control" formControlName="twitter" >
+                        </div>
+                      </div>
+                      <div class="row mb-4">
+                        <div class="col-sm-3">
+                          <h6>LinkedIn</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <input type="text" class="form-control" formControlName="linkedin">
+                        </div>
+                      </div>
+                      <div class="row mb-4">
+                        <div class="col-sm-3">
+                          <h6>Github</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <input type="text" class="form-control" formControlName="gethub">
+                        </div>
+                
+
+                    </div>
+                 </div>
+               </div>
+               </div>
+              
+              
+</div>
+          </div>
+          
+          <div class="button d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-outline-primary" (click)="updateCompte(compte)">Save</button>
+            
+            </div>
+          
+    </div>
+   
+</div>
+
+</form>
+</form>

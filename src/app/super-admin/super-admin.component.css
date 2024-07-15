@@ -1,0 +1,35 @@
+.admin-form {
+  width: 50%;
+  margin:auto;/* Centrer horizontalement */
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.user-info {
+  margin-bottom: 10px;
+}
+
+.user-info span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.edit-mode {
+  display: flex;
+  align-items: center;
+}
+
+.edit-mode label {
+  margin-right: 10px;
+}
+
+.ok-button {
+  margin-left: auto; /* Bouton aligné à droite dans le mode d'édition */
+}
+
+button {
+  margin-top: 10px; /* Ajouter un peu d'espace entre les boutons */
+}

@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 60px;">
+  <div class="hh">
+    <button type="button" class="btn btn-light" id="icon1" style="position: relative; left: 1700%;" (click)="navigateToCompte(); createNewCompte()">
+      <i class="bi bi-person-fill"></i>
+    </button>
+    <button type="button" class="btn btn-light" id="icon2" style="position: relative; left: 1700%;">
+      <i class="bi bi-chat-square-dots-fill"></i>
+    </button>
+  </div>
+</nav>
+
+<div class="d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <label>Projects :</label>
+    <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Personal Projects</button>
+    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Professional Tasks</button>
+  </div>
+  
+  <div class="tab-content" id="v-pills-tabContent">
+    <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+      <div class="card">
+        <div class="card-header" style="height: 80px;">
+          <form [formGroup]="addprojectForm">
+          <div class="input-group flex-nowrap">
+            <input type="text" style="margin-right: 180px;height: 50px;" class="form-control" placeholder="Nom du projet" aria-label="Username" aria-describedby="addon-wrapping" formControlName="name">
+          </div>
+          <button type="submit" style="width: 50px;float: right;position: relative;bottom: 50px;" class="btn btn-info btn-lg" (click)="addProject()">
+            <span class="glyphicon glyphicon-plus">+</span>
+          </button>
+        </form>
+        </div>
+        <div class="card-body">
+          <div *ngIf="personalProjects.length === 0">
+            <p>Aucun projet personnel n'a été trouvé.</p>
+          </div>
+          <div *ngFor="let project of personalProjects">
+            <div *ngIf="!project.isEditing">
+              <a (click)="navigateToTasks(project.id)">{{ project.name }}</a>
+            </div>
+            <div *ngIf="project.isEditing">
+              <form [formGroup]="updateprojectForm">
+                <input type="text" [(ngModel)]="project.updatedName" placeholder="Update the name" formControlName="name">
+              </form>
+            </div>
+            <div class="icon">
+              <button type="button" class="btn btn-light" (click)="deleteProject(project.id)"><i class="bi bi-trash"></i></button>
+              <button type="button" class="btn btn-light" (click)="project.isEditing ? updateProjectName(project) : showInput(project)">
+                <i *ngIf="project.isEditing" class="bi bi-save"></i>
+                <i *ngIf="!project.isEditing" class="bi bi-pencil-square"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+      <div class="card">
+        <div class="card-header">
+          Liste des tâches
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let task of userTasks">
+              <input type="checkbox" [checked]="task.completed" (change)="updateTaskCompletion(task, $event)">
+              <h5 class="mb-1">{{ task.name }}</h5>
+              <p class="mb-1">Date: {{ task.date }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+.card-body {
+    height: 300px; /* ou toute autre valeur que vous souhaitez */
+    overflow-y: auto; /* ajout d'un défilement vertical si le contenu dépasse la hauteur */
+}
+/* Style pour les boutons */
+.nav-link {
+	background-color: #dce7df; /* Couleur de fond pour les boutons */
+	color: #2b2a2a; /* Couleur du texte pour les boutons */
+  }
+  
+  /* Ajout d'un espacement entre les boutons */
+  .nav-link + .nav-link {
+	margin-top: 5px;
+  }
+  .nav-link {
+	padding: 10px;
+	margin-bottom: 5px;
+	border-radius: 8px;
+	text-align: left;
+	transition: background-color 0.3s ease;
+  }
+  
+  /* Style pour l'onglet actif */
+  .nav-link.active,
+  .nav-link:focus,
+  .nav-link:hover {
+	background-color: #98e1ee; /* Couleur de fond pour l'onglet actif */
+	color: #fff; /* Couleur du texte pour l'onglet actif */
+	outline: none; /* Supprimer la bordure lorsqu'il est cliqué */
+  }
+  
+  /* Style pour les boutons */
+  .nav-link {
+	background-color: #dce7df; /* Couleur de fond pour les boutons */
+	color: #2b2a2a; /* Couleur du texte pour les boutons */
+  }
+  .card {
+    
+    width: 200%;
+}
+#v-pills-tab{
+  background-color: #f8f8f8;
+    width: 18%;
+    height: 720px;
+ 
+    top: 25px;
+    left: -1%;
+}
+

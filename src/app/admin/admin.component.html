@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 60px;">
+  <div class="hh">
+    <button type="button" class="btn btn-light" id="icon1" style="position: relative;
+    left: 1700%;" (click)="navigateToCompte(); createNewCompte()"><i class="bi bi-person-fill"></i></button>
+    <button type="button" class="btn btn-light" id="icon2" style="position: relative;
+    left: 1700%;"><i class="bi bi-chat-square-dots-fill"></i></button>
+  </div>
+</nav>
+
+<div class="d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <label>Projects :</label>
+    <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Personal Project</button>
+    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Professional Project</button>
+  </div>
+
+  <div class="tab-content" id="v-pills-tabContent">
+    <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+      <form [formGroup]="addProjectForm">
+        <div class="card">
+          <div class="card-header" style="height: 80px;">
+            <div class="input-group flex-nowrap">
+              <input type="text" style="margin-right: 180px;height: 50px;" class="form-control" placeholder="Nom du projet" aria-label="Username" aria-describedby="addon-wrapping" formControlName="name">
+            </div>
+            <button type="submit" style="width: 50px;float: right;position: relative;bottom: 50px;" class="btn btn-info btn-lg" (click)="addProject('Personal')">
+              <span class="glyphicon glyphicon-plus">+</span>
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="projects" *ngFor="let project of personalProjects">
+              <div *ngIf="!project.isEditing">
+                <a (click)="navigateToTasks(project.id)">{{ project.name }}</a>
+                </div>
+  
+                <div *ngIf="project.isEditing">
+                  <form [formGroup]="updateprojectForm">
+                    <!-- Utiliser [(ngModel)] pour lier la valeur de l'input -->
+                    <input type="text" [(ngModel)]="project.updatedName" placeholder="Update the name" formControlName="name">
+                  </form>
+                  
+                </div>
+                <div class="icon">
+                  <button type="button" class="btn btn-light" (click)="deleteProject(project.id)"><i class="bi bi-trash"></i></button>
+                  <button type="button" class="btn btn-light" (click)="project.isEditing ? updateProjectName(project) : showInput(project)">
+                    <i *ngIf="project.isEditing" class="bi bi-save"></i>
+                    <i *ngIf="!project.isEditing" class="bi bi-pencil-square"></i>
+                  </button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+      
+        <div class="card">
+          <div class="card-header" style="height: 80px;">
+            <form [formGroup]="addProjectForm">
+            <div class="input-group flex-nowrap">
+                <input type="text" style="margin-right: 180px;height: 50px;" class="form-control" placeholder="nom du projet" aria-label="Username" aria-describedby="addon-wrapping" formControlName="name">
+            </div>
+          </form>
+            <button style="width: 50px;float: right;position: relative;bottom: 50px;" class="btn btn-info btn-lg" (click)="addProject('Professional')">
+              <span class="glyphicon glyphicon-plus">+</span>
+            </button>
+          </div>
+          <div class="card-body">
+          <div class="projects" *ngFor="let project of professionalProjects">
+            <div *ngIf="!project.isEditing">
+              <a (click)="navigateToTasksPro(project.id)">{{ project.name }}</a>
+              </div>
+
+              <div *ngIf="project.isEditing">
+                <form [formGroup]="updateprojectForm">
+                  <!-- Utiliser [(ngModel)] pour lier la valeur de l'input -->
+                  <input type="text" [(ngModel)]="project.updatedName" placeholder="Update the name" formControlName="name">
+                </form>
+                
+              </div>
+              <div class="icon">
+                <button type="button" class="btn btn-light" (click)="deleteProject(project.id)"><i class="bi bi-trash"></i></button>
+                <button type="button" class="btn btn-light" (click)="project.isEditing ? updateProjectName(project) : showInput(project)">
+                  <i *ngIf="project.isEditing" class="bi bi-save"></i>
+                  <i *ngIf="!project.isEditing" class="bi bi-pencil-square"></i>
+                </button>
+              </div>
+          </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,130 @@
+.tab-content{
+width: 100%;
+
+}
+.d-flex{
+    overflow-x: hidden  ;
+}
+input.form-control[_ngcontent-ng-c2834510003]{
+    position: relative;
+    bottom: 30px;
+    padding: 7px;
+    margin-left: 70px;
+    margin-right: 10px;
+    display: inline-block;
+}
+.card{
+    width: 135%;
+}
+
+.gg{
+width: 50%;
+position: relative;
+left:140px;
+}
+#v-pills-All{
+    position: relative;
+    left: 260px;
+    width: 80%;
+}
+#v-pills-Completed{
+    position: relative;
+    left: 260px;
+    width: 80%; 
+}
+#v-pills-Incompleted{
+    position: relative;
+    left: 260px;
+    width: 80%;
+
+}
+#v-pills-All-tab{
+    width: 250px;
+    margin-left: 19px;
+}
+.search{
+    position: relative;
+    left: 50px;
+    width: 90%;
+}
+.box{
+    position: relative;
+    top: 32px;
+}
+.h{
+    position: relative;
+    left: 100px;
+    
+}
+.hh{
+    position: relative;
+    left: 20px;
+}
+.icon{
+    float: right;
+    position: relative;
+    bottom: 58px;
+}
+.nav-link.active,
+  .nav-link:focus,
+  .nav-link:hover {
+	background-color: #98e1ee; /* Couleur de fond pour l'onglet actif */
+	color: #000000 !important;/* Couleur du texte pour l'onglet actif */
+	outline: none; /* Supprimer la bordure lorsqu'il est cliqué */
+  }
+  .nav-link {
+	background-color: #dce7df; /* Couleur de fond pour les boutons */
+	color: #2b2a2a; /* Couleur du texte pour les boutons */
+    width: 100%;
+}
+  
+ .labels {
+    display: inline-block;
+    margin-bottom: 55px;
+    margin-top: 40px;
+    margin-left: 90px;
+    font-size: 19px;
+    font-family: fangsong;
+}
+.nav-link + .nav-link {
+	margin-top: 5px;
+  }
+
+  .form-select{
+    width: 30%;
+    position: relative;
+    bottom: 77px;
+    left: 65%;
+  }
+  #v-pills-home-tab:focus,#v-pills-home-tab:hover{
+
+    background-color: #0dcaf0;
+    
+}
+#v-pills-profile-tab:focus,#v-pills-profile-tab:hover{
+
+    background-color: #0dcaf0;
+    
+}
+#add:hover{
+    background-color: #0dcaf0;
+
+
+}
+#icon{
+    position: relative;
+    left: 1700%;
+}
+  .proj{
+    background-color: #c6c7c8;
+    border-radius: 10px 10px 10px 10px ;
+    text-align: center;
+    width: 270px;
+    position :relative;
+    right: 10px;
+    
+}
+.kk{
+position: relative;
+top: 30px;
+}

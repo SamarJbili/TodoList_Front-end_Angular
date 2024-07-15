@@ -1,0 +1,14 @@
+<form [formGroup]="adminForm" class="admin-form">
+  <div *ngFor="let user of users" class="user-info">
+    <span>{{ user.mail }} - {{ user.type }}</span>
+    <button (click)="toggleEditMode(user)" class="edit-button">Modify Type</button>
+    
+    <div *ngIf="user.editMode" class="edit-mode">
+      <label for="userType">User Type:</label>
+      <input type="checkbox" id="userType" formControlName="userType" (change)="handleCheckboxChange(user)">
+      <label for="adminType">Admin Type:</label>
+      <input type="checkbox" id="adminType" formControlName="adminType" (change)="handleCheckboxChange(user)">
+      <button (click)="updateUserType(user)" class="ok-button">OK</button>
+    </div>
+  </div>
+</form>

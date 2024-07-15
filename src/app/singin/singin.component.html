@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<!-- singin.component.html -->
+<div class="warper">
+  <div class="login-box">
+    <div class="login-header">
+      <span>Sign In</span>
+    </div>
+    <form [formGroup]="addAccountForm" (ngSubmit)="addAccount()">
+      <div class="input-box">
+        <input formControlName="mail" type="text" id="mail" class="input-field" required>
+        <label for="mail" class="label">Email</label>
+        <i class="bi bi-person-fill icon" style="font-size: 25px;"></i>
+      </div>
+      <div class="input-box">
+        <input formControlName="password" type="password" id="password" class="input-field" required>
+        <label for="password" class="label">Password</label>
+        <i class="bi bi-lock-fill icon"></i>
+      </div>
+      <div class="input-box">
+        <button type="submit" [disabled]="addAccountForm.invalid" class="input-submit">Sign In</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
